@@ -2,8 +2,8 @@ import java.io.IOException;
 
 public class Start {
     public static void main(String[] args) throws IOException {
-        SudokuSolver recursive = new RecursiveSolver("../../test/resources/trivial_puzzle.sdk");
-        SudokuSolver iterative = new IterativeSolver("../../test/resources/trivial_puzzle.sdk");
+        SudokuSolver recursive = new RecursiveSolver("../../test/resources/sample_puzzle.sdk");
+        SudokuSolver iterative = new IterativeSolver("../../test/resources/sample_puzzle.sdk");
 
         long t1 = System.nanoTime();
         System.out.println(recursive.solve());
