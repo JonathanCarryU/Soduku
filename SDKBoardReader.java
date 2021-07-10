@@ -1,5 +1,3 @@
-// Author: Linchuan Yang
-
 import java.io.*;
 
 public class SDKBoardReader extends Board implements BoardReader{
