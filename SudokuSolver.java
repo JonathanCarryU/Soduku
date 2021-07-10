@@ -1,3 +1,6 @@
+import board.Board;
+
 public interface SudokuSolver {
-    public Board solve();
+    Board board = new Board();
+    Board solve();
 }

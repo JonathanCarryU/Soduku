@@ -1,8 +1,8 @@
-// Author: Linchuan Yang
+package board.reader;
 
-import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.List;
 
 public interface BoardReader {
-    void read() throws FileNotFoundException;
-    String toString();
+    List<List<Integer>> parseBoard(String filePath) throws IOException;
 }

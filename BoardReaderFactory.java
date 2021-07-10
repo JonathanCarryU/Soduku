@@ -1,21 +1,20 @@
-// Author: Linchuan Yang
+package board.reader;
 
-import java.io.FileNotFoundException;
-import java.util.Arrays;
+import java.io.*;
 
-public class BoardReaderFactory { 
-    public static Board getBoard(String path) throws FileNotFoundException {
-        String[] temp = path.split("\\.");
-        String extension = temp[temp.length - 1];
+public class BoardReaderFactory {
+    public static BoardReader getReader(String filePath){
+        int i = filePath.lastIndexOf('.');
+        if (i > 0) {
+            String extension = filePath.substring(i + 1);
+            if (extension.equalsIgnoreCase("sdk")) {
+                return new SdkBoardReader();
 
-        if (extension.equalsIgnoreCase("sdk")) {
-            return new SDKBoardReader(path);
-        } else if (extension.equalsIgnoreCase("ss")) {
-            return new SSBoardReader(path);
+            } else if (extension.equalsIgnoreCase("ss")) {
+                return new SsBoardReader();
+            }
         }
-        System.out.println();
-        System.out.println("Extension ." + extension + " is not supported! ");
-        System.out.println("WILL CONTINUE TO USE DEMO_1(.SDK) INSTEAD");
-        return new Board();
+
+        throw new UnsupportedOperationException("File has no extension.");
     }
 }
