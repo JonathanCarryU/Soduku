@@ -1,5 +1,3 @@
-// Author: Linchuan Yang
-
 import java.util.*;
 import java.io.*;
 
